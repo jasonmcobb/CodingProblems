@@ -5,25 +5,35 @@ on:
   pull_request:
     branches: [ main ]
     paths:
-    - 'src/*'
+    - 'src/**'
     - 'src/CodingProblems/**.sln'
     - 'src/CodingProblems/**.cs'
     - 'src/CodingProblems/**.csporj'
 
-jobs:
-  build:
+env:
+  DOTNET_VERSION: '6.0.x'
 
-    runs-on: ubuntu-latest
+jobs:
+  build-and-test:
+
+    name: build-and-test-${{matrix.os}}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.x'
-    - name: Restore dependencies
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Install dependencies
       run: dotnet restore
+      
     - name: Build
       run: dotnet build --no-restore
+
     - name: Test
       run: dotnet test --no-build --verbosity normal
