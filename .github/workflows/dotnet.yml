@@ -6,7 +6,7 @@ on:
     branches: [ main ]
     paths:
     - 'src/*'
-    - 'src/CodingProblems/*'
+    - 'src/CodingProblems/**.sln'
     - 'src/CodingProblems/**.cs'
     - 'src/CodingProblems/**.csporj'
 
