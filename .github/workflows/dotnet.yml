@@ -1,12 +1,14 @@
-name: .NET
+name: Build and Test
 
 on:
   push:
   pull_request:
     branches: [ main ]
     paths:
-      - 'src/CodingProblems/**.cs'
-      - 'src/CodingProblems/**.csporj'
+    - 'src/*'
+    - 'src/CodingProblems/*'
+    - 'src/CodingProblems/**.cs'
+    - 'src/CodingProblems/**.csporj'
 
 jobs:
   build:
