@@ -4,14 +4,10 @@ on:
   push:
   pull_request:
     branches: [ main ]
-    paths:
-    - 'src/**'
-    - 'src/CodingProblems/**.sln'
-    - 'src/CodingProblems/**.cs'
-    - 'src/CodingProblems/**.csporj'
 
 env:
   DOTNET_VERSION: '6.0.x'
+  SOLUTION_PATH: 'src/CodingProblems.sln'
 
 jobs:
   build-and-test:
@@ -31,9 +27,9 @@ jobs:
 
     - name: Install dependencies
       run: dotnet restore
-      
+
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore ${{ env.SOLUTION_PATH }}
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal ${{ env.SOLUTION_PATH }}
