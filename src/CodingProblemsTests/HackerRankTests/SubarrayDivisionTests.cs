@@ -1,7 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-using CodingProblems.HackerRank;
-using Xunit;
-
 namespace CodingProblemsTests.HackerRankTests;
 
 [ExcludeFromCodeCoverage]
