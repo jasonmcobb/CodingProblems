@@ -1,9 +1,6 @@
-using System.Linq;
-using CodingProblems.HackerRank;
-using Xunit;
-
 namespace CodingProblemsTests.HackerRankTests;
 
+[ExcludeFromCodeCoverage]
 public class CountApplesAndOrangesTests
 {
     [Theory]

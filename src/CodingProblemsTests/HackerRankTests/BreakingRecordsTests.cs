@@ -1,8 +1,6 @@
-using CodingProblems.HackerRank;
-using Xunit;
-
 namespace CodingProblemsTests.HackerRankTests;
 
+[ExcludeFromCodeCoverage]
 public class BreakingRecordsTests
 {
     [Theory]
