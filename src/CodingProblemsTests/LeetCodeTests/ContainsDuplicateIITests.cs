@@ -21,8 +21,9 @@ public class ContainsDuplicateIITests
     {
         var expectedResponse = false;
         var k = 612;
+        var currentDirectory = Directory.GetCurrentDirectory();
         var path = 
-            "/Users/jasoncobb/GitHub/CodingProblems/src/CodingProblemsTests/LeetCodeTests/LeetCodeSupplimentalData/ContainsDuplicateIILargeDataSet.txt";
+            $"{currentDirectory}/LeetCodeTests/LeetCodeSupplementalData/ContainsDuplicateIILargeDataSet.txt";
         var bigDataSetString = File.ReadAllLines(path);
         var bigDataSetInt = Array.ConvertAll(bigDataSetString, int.Parse);
         

@@ -23,5 +23,9 @@
     <ItemGroup>
       <ProjectReference Include="..\CodingProblems\CodingProblems.csproj" />
     </ItemGroup>
+    
+    <ItemGroup>
+        <None Include="$(SolutionDir)CodingProblemsTests\LeetCodeTests\LeetCodeSupplementalData\**" CopyToOutputDirectory="Always" />
+    </ItemGroup>
 
 </Project>
