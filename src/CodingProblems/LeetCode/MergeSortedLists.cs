@@ -1,29 +1,53 @@
 namespace CodingProblems.LeetCode;
 
 public class ListNode {
-    public int Val;
-    public ListNode? Next;
+    public int val;
+    public ListNode? next;
     public ListNode(int val=0, ListNode? next=null) {
-        this.Val = val;
-        this.Next = next;
+        this.val = val;
+        this.next = next;
     }
 }
     
-public class MergeSortedLists
+public static class MergeSortedLists
 {
-    // public ListNode MergeTwoLists(ListNode list1, ListNode list2)
-    // {
-        // if (list1.)
-        // {
-        //     return list2;
-        // }
-        //
-        // if (list2 == null)
-        // {
-        //     return list1;
-        // }
-        // var listNode = new ListNode();
-        //
-        // return new ListNode();
-    // }
+    public static ListNode MergeTwoLists(ListNode list1, ListNode list2)
+    {
+        // Check items for being empty first
+        if (list1 == null)
+        {
+            return list2;
+        }
+
+        if (list2 == null)
+        {
+            return list1;
+        }
+        
+        ListNode d = new ListNode(), cur = d;
+        
+        while (list1 != null && list2 != null)
+        {
+            if (list1.val < list2.val)
+            {
+                cur.next = list1;
+                list1 = list1.next;
+            }
+            else
+            {
+                cur.next = list2;
+                list2 = list2.next;
+            }
+            
+            cur = cur.next;
+        }
+        
+        if (list1 != null)
+            cur.next = list1;
+        
+        if (list2 != null)
+            cur.next = list2;
+        
+        return d.next;
+    }
 }
