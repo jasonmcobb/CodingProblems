@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using CodingProblems.HackerRank;
-
 namespace CodingProblemsTests.HackerRankTests;
 
 public class BillDivisionTests
